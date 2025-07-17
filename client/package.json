@@ -6,8 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:prod": "vite build --mode production",
+    "preview": "vite preview",
+    "serve": "vite preview --port 3000",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
