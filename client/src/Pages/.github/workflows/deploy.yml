@@ -1,0 +1,41 @@
+name: MERN CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    env:
+      MONGO_URI: ${{ secrets.MONGO_URI }}
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install and test backend
+        working-directory: ./server
+        run: |
+          pnpm install
+          pnpm test
+
+      - name: Install and test frontend
+        working-directory: ./client
+        run: |
+          pnpm install
+          pnpm test
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Render or other provider
+        run: echo "My new deployment step"
