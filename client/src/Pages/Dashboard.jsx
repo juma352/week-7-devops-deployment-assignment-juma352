@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 import TaskCard from "../components/TaskCard";
 import TaskDialog from "../components/TaskDialog";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavBar";
 import toast from "@/lib/toast";
 import { getUserFromToken } from "@/utils/auth";
 
