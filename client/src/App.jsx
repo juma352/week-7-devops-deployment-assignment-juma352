@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import RoleDashboard from "./pages/Dashboard";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
+import RoleDashboard from "./Pages/Dashboard";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import { Toaster } from "sonner";
 
